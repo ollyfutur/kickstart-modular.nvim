@@ -1,9 +1,13 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- Replace <Esc> by <Tab> and <Tab> with Maj+<Tab>
+vim.keymap.set('i', '<Tab>', '<Esc>', { desc = 'Return to normal mode' })
+vim.keymap.set('i', '<S-Tab>', '<Tab>', { desc = 'Insert Tab' })
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Tab>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
